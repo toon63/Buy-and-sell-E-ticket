@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<style type="text/css">
+	body{
+		font-family: 'Athiti', sans-serif;
+		background-color: #f8f9fa;
+	}
+	.title{
+		/*color: white;*/
+		font-size: 18px;
+	}
+	.btn-add {
+		color: #fff;
+		background-color: #212529;
+		border-color: #212529;
+	}
+	.btn-add:hover {
+		color: #fff;
+		background-color: #212529;
+		border-color: #212529;
+	}
+
+	.form-check-input:checked {
+		background-color: #212529;
+		border-color: #212529;
+	}
+	.card-content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+		word-wrap: break-word;
+		backdrop-filter: blur(10px);
+		background: white;
+		box-sizing: border-box;
+  /*box-shadow: 2px 3px rgb(0 0 0);
+    background: #2c353570;
+    box-sizing: border-box;
+    box-shadow: 1px 2px rgb(0 0 0 / 43%);*/
+    border-radius: 15px;
+}
+</style>
+
+<script type="text/javascript">
+	function fncSubmit()
+	{
+		if(document.getElementById('s_name').value == ""){
+			alert('กรุณากรอกชื่อระบบ');
+			return false;
+		}else if(document.getElementById('s_ip').value == ""){
+			alert('กรุณากรอกเลข IP เว็บไซต์');
+			return false;
+		}else if(document.getElementById('s_status').value == ""){
+			alert('กรุณาเลือกสถานะเว็บไซต์');
+			return false;
+		}else if(document.getElementById('s_cpu').value == ""){
+			alert('กรุณากรอก CPU');
+			return false;
+		}else if(document.getElementById('s_ram').value == ""){
+			alert('กรุณากรอก RAM');
+			return false;
+		}else if(document.getElementById('s_memory').value == ""){
+			alert('กรุณากรอก Memory');
+			return false;
+		}
+	}
+</script>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="card-content mt-3">
+					<div class="card-body" >
+						<form action="" name="form" id="form" method="post" onSubmit="JavaScript:return fncSubmit();">
+							<div class="form-row">  
+								<div class="form-group col-md-6 col-12">
+									<label class="title" for="inputEmail4">ชื่อระบบ</label>
+									<input type="text" class="form-control" name="date_start" id="date_start">
+								</div>
+
+								<div class="form-group col-md-6 col-12">
+									<label class="title" for="inputEmail4">เลข IP เว็บไซต์</label>
+									<input type="text" class="form-control" name="date_end" id="date_end">
+								</div>
+
+								<div class="form-group col-md-6 col-12">
+									<label class="title" for="inputEmail4">สถานะเว็บไซต์</label>
+									<select class="form-control" name="r_system" id="r_system">
+										<option value="Public">Public</option>
+										<option value="Private">Private</option>
+									</select>
+								</div>
+
+								<div class="form-group col-md-6 col-12">
+									<label class="title" for="inputEmail4">CPU</label>
+									<input type="text" class="form-control" name="date_start" id="date_start">
+								</div>
+
+								<div class="form-group col-md-6 col-12">
+									<label class="title" for="inputEmail4">RAM</label>
+									<input type="text" class="form-control" name="date_end" id="date_end">
+								</div>
+
+								<div class="form-group col-md-6 col-12">
+									<label class="title" for="inputEmail4">Memory</label>
+									<input type="text" class="form-control" name="date_end" id="date_end">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-4"></div>
+								<div class="col-4 text-center">
+									<button type="submit" class="btn btn-add title">บันทึก</button>
+								</div>
+								<div class="col-4"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<!-- <div class="col-md-4">
+				<h3>Add New Employee</h3>
+
+				<form action="save.php" id="form">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input class="form-control" type="text" name="email">
+					</div>
+					<div class="form-group">
+						<label for="first_name">First Name</label>
+						<input class="form-control" type="text" name="first_name">
+					</div>
+					<div class="form-group">
+						<label for="last_name">Last Name</label>
+						<input class="form-control" type="text" name="last_name">
+					</div>
+					<div class="form-group">
+						<label for="address">Address</label>
+						<textarea class="form-control" type="text" name="address" rows="3"></textarea>
+					</div>
+					<button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>
+				</form>
+			</div> -->
+
+			<div class="col-md-12 mt-3">
+				<div id="employees-list"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- The Modal -->
+	<div class="modal" id="edit-employee-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Edit Employee</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<form action="update.php" id="edit-form">
+						<input class="form-control" type="hidden" name="id">
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input class="form-control" type="text" name="email">
+						</div>
+						<div class="form-group">
+							<label for="first_name">First Name</label>
+							<input class="form-control" type="text" name="first_name">
+						</div>
+						<div class="form-group">
+							<label for="last_name">Last Name</label>
+							<input class="form-control" type="text" name="last_name">
+						</div>
+						<div class="form-group">
+							<label for="address">Address</label>
+							<textarea class="form-control" type="text" name="address" rows="3"></textarea>
+						</div>
+						<button type="button" class="btn btn-primary" id="btnUpdateSubmit">Update</button>
+						<button type="button" class="btn btn-danger float-right" data-dismiss="modal">Close</button>
+					</form>
+
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Must put our javascript files here to fast the page loading -->
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- Page Script -->
+	<script src="assets/js/scripts.js"></script>
+
+</body>
+
+</html>
